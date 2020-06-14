@@ -16,7 +16,7 @@ BUGS:
     - Make sure to double-check gifts for any item with multiple variations per item ID (stained glass, clay, etc)
     - Gift Names with "&" as a part of their name (ie: Sweet&Sour Porkchop) may get messed up
 """
-COOLDOWN = 14400  # 4h
+COOLDOWN = 240  # 4h
 SHOP_NAME = "EventgiftShop"  # Rename to any string with no spaces. Will append index# for >1 page
 
 
