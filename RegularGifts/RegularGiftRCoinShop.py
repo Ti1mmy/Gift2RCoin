@@ -17,11 +17,16 @@ BUGS:
     - Gift Names with "&" as a part of their name (ie: Sweet&Sour Porkchop) may get messed up
 """
 COOLDOWN = 240  # 4h
-SHOP_NAME = "EventgiftShop"  # Rename to any string with no spaces. Will append index# for >1 page
+SHOP_NAME = "regulargiftshop"  # Rename to any string with no spaces. Will append index# for >1 page
 
-
-with open("Test Files/EventRCoinShopGifts.conf", "r", encoding="utf8") as File1:
+dict = {}
+with open("Test Files/inputgifts.conf", "r", encoding="utf8") as File1:
     file_contents = File1.read().split(sep="\n")
+with open("dict.txt", "r") as File2:
+    lines = File2.read().split("\n")
+for line in lines:
+    elem = line.split(";")
+    dict[elem[0]] = [elem[1]]
 newlist = []
 newlistformal = []
 newlistitem = []
@@ -72,17 +77,15 @@ for name in newlistformal:
 """
 Output code
 """
-print(newlist[0])
 index = 0
 shop = []
-for i in range((len(newlistformal) // 31)):
-    if True:
+for i in range((len(newlistformal) // 38)):
+    if i != len(newlistformal) // 38:
         shop.append([f'{SHOP_NAME}{i}' + " {"])
         for k in range(31):
-            shop[i].append(f'	"{index % 31}"' + " {", )
+            shop[i].append(f'	"{index % 38}"' + " {", )
             shop[i].append("		action {")
             shop[i].append(f"			cooldown={COOLDOWN}")
-            print(index)
             shop[i].append(f'			commodity="WRAPPED_GIFT:{newlist[index]}:1"')
             shop[i].append(f'			"cost_sell"="CURRENCY:rcoin:2"')
             shop[i].append(f'			message="&4Enjoy!"')
@@ -98,9 +101,8 @@ for i in range((len(newlistformal) // 31)):
             shop[i].append('		}')
             shop[i].append('	}')
             index += 1
-            print(shop)
         for o in range(5):
-            shop[i].append(f'    "{31 + o}"' + "{")
+            shop[i].append(f'    "{38 + o}"' + "{")
             shop[i].append("        action {")
             shop[i].append('            permission="commands.use"')
             shop[i].append('            reward="COMMAND:."')
@@ -119,8 +121,8 @@ for i in range((len(newlistformal) // 31)):
         shop[i].append('}')
     else:
         shop.append([f'{SHOP_NAME}{i}' + " {"])
-        for k in range(31):
-            shop[i].append(f'	"{index % 31}"' + " {", )
+        for k in range(38):
+            shop[i].append(f'	"{index % 38}"' + " {", )
             shop[i].append("		action {")
             shop[i].append(f"			cooldown={COOLDOWN}")
             shop[i].append(f'			commodity="WRAPPED_GIFT:{newlist[index]}:1"')
@@ -139,7 +141,7 @@ for i in range((len(newlistformal) // 31)):
             shop[i].append('	}')
             index += 1
         for o in range(5):
-            shop[i].append(f'    "{31 + o}"' + "{")
+            shop[i].append(f'    "{38 + o}"' + "{")
             shop[i].append("        action {")
             shop[i].append('            permission="commands.use"')
             shop[i].append('            reward="COMMAND:."')
