@@ -87,6 +87,7 @@ Output code
 index = 0
 shop = []
 for stack in toconvert:
+    print(f'{stack}stacks={stack}stacks')
     shop.append(f'{stack}stacks ' + "{")
     for i in range(18):
         shop.append(f'    "{i}"' + "{")
