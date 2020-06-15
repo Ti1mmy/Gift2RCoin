@@ -151,7 +151,7 @@ mballgen5;3
 mballgen6;4
 mballgen7;5
 randommballgen;3
-rdmshiny (old);20
+rdmshiny;20
 rdmshiny2;10
 rdmshiny3;15
 rdmshiny4;30

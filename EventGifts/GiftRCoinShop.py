@@ -166,3 +166,11 @@ with open("output.conf", "a", encoding="utf-8") as output:
 #           f'                reward="COMMAND:giftplayer %p% {gift}"\n'
 #           '            }\n'
 #           '        }')
+print(newlist)
+print(newlistitem)
+print(newlistformal)
+print(newlores)
+print(newlist.index('rcfatherjoke'))
+with open("lores.conf", "a", encoding="utf-8") as output:
+    for thinglore in newlores:
+        output.write(f'{thinglore}\n')
