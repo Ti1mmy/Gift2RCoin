@@ -1,4 +1,4 @@
-for i in range(27):
+for i in range(45):
     print(f'    "{i}"' + '{')
     print('        action {')
     print('            close=false')
