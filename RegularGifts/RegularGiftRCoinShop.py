@@ -170,7 +170,7 @@ for stack in toconvert:
             shop.append('            ]')
             shop.append('        }')
             shop.append('    }')
-        elif i == 4:
+        elif i == 6:
             shop.append('        action {')
             shop.append(f'			commodity="Wrapped_gift:{stack}:32"')
             shop.append(f'            cost="CURRENCY:rcoin:10000000000000"')
@@ -187,7 +187,7 @@ for stack in toconvert:
             shop.append('            ]')
             shop.append('        }')
             shop.append('    }')
-        elif 4 < i < 13:
+        elif 6 < i < 13:
             shop.append('        action {')
             shop.append('            permission="commands.use"')
             shop.append('            reward="COMMAND:."')
@@ -252,7 +252,7 @@ for stack in toconvert:
             shop.append('            ]')
             shop.append('        }')
             shop.append('    }')
-            shop.append('    "menu_title"="' + newlistformal[newlist.index(stack)].split('"')[1] + ' &6Shop!"')
+            shop.append('    "menu_title"="&c' + newlistformal[newlist.index(stack)].split('"')[1][2:] + ' Shop!"')
             shop.append('}')
 with open("output.conf", "a", encoding="utf-8") as output:
     for menu in shop:
